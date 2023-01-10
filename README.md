@@ -1,2 +1,2 @@
 # finInspect
-A NodesJS-Fastify app with ReactJS, NextJS, MongoDB, mongoose, and swagger
+A NodesJS-Fastify app with MongoDB, mongoose, and swagger
