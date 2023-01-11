@@ -22,7 +22,12 @@ async function configPlugin(server: any, options: any, done: any) {
       },
       DB_USERNAME: { type: 'string' },
       DB_PASSWORD: { type: 'string' },
-      DB_CLUSTER_NAME: { type: 'string'}
+      DB_CLUSTER_NAME: { type: 'string'},
+      REDIS_HOST: { type: 'string' },
+      REDIS_PASSWORD: { type: 'string'},
+      REDIS_PORT: { type: 'number' },
+      REDIS_FAMILY: { type: 'number' },
+      SESSION_SECRET:{ type: 'string'},
     },
   };
 
