@@ -16,13 +16,18 @@ async function configPlugin(server: any, options: any, done: any) {
       HOST: {
         type: 'string',
       },
+      NODE_ENV: {
+        type: 'string',
+        default: 'development'
+      },
       DEBUG_LEVEL: {
         type: 'number',
         default: 1000,
       },
       DB_USERNAME: { type: 'string' },
       DB_PASSWORD: { type: 'string' },
-      DB_CLUSTER_NAME: { type: 'string'}
+      DB_HOSTNAME: { type: 'string' },
+      DB_NAME: { type: 'string' }
     },
   };
 
