@@ -6,33 +6,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const user_service_1 = __importDefault(require("./user.service"));
 const registerController = {
     login: async (request, reply) => {
+        const { sessionId } = request.session;
         try {
             const result = await user_service_1.default.login(request.body);
-            if (result.message === 'Login successful') {
-                return reply.send(result);
-            }
-            else
-                return reply.code(404).send(result);
+            if (result.status === false)
+                reply.code(404);
+            return reply.send(result);
         }
         catch (error) {
-            return reply.send({
-                message: error.message,
-            });
+            return reply.send(error);
         }
     },
     register: async (request, reply) => {
         try {
             const result = await user_service_1.default.register(request.body);
-            if (result.message === 'Registration successful') {
-                return reply.send(result);
-            }
-            else
-                return reply.code(404).send(result);
+            if (result.status === false)
+                reply.code(404);
+            return reply.send(result);
         }
         catch (error) {
-            return reply.send({
-                message: error.message,
-            });
+            console.log('error', error);
+            return reply.send(error);
         }
     },
     getCountry: async (request, reply) => {

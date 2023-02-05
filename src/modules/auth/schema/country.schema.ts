@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose';
 import {
   CountryDocument,
   CountryModel
-} from '../types/register.type';
+} from '../types/country.type';
 
 export const CountrySchema: Schema = new Schema({
   country: {

@@ -5,9 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fastify_plugin_1 = __importDefault(require("fastify-plugin"));
 const mongoose_1 = __importDefault(require("mongoose"));
-const register_schema_1 = require("../modules/auth/schema/register.schema");
 const country_schema_1 = require("../modules/auth/schema/country.schema");
-const login_schema_1 = require("../modules/auth/schema/login.schema");
+const user_schema_1 = require("../modules/auth/schema/user.schema");
+const logger_1 = require("./logger");
 const ConnectDB = async (fastify, options) => {
     mongoose_1.default.set('strictQuery', true);
     try {
@@ -24,7 +24,7 @@ const ConnectDB = async (fastify, options) => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        const models = { Login: login_schema_1.Login, Register: register_schema_1.Register, Country: country_schema_1.Country };
+        const models = { User: user_schema_1.User, Country: country_schema_1.Country, Log: logger_1.Log };
         fastify.decorate('db', { models });
     }
     catch (error) {

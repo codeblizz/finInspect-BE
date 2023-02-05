@@ -1,13 +1,15 @@
-import { CountryModel, RegisterModel, LoginModel } from '../modules/auth/types/register.type';
+import { LogModel } from './../modules/auth/types/log.type';
+import { CountryModel } from '../modules/auth/types/country.type';
+import { UserModel } from '../modules/auth/types/user.type';
 
 export interface Db {
   models: Models;
 }
 
 export interface Models {
-  Login: LoginModel;
-  Register: RegisterModel;
+  User: UserModel;
   Country: CountryModel;
+  Log: LogModel
 }
 
 export interface IDBConnection {

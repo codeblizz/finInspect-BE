@@ -1,0 +1,7 @@
+version: '20.10.17'
+
+services:
+  cache: 
+    image: redis
+
+  

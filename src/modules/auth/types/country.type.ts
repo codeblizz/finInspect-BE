@@ -1,8 +1,8 @@
 import { Model, Document } from "mongoose";
 
 export interface CountryAttrs {
-  filter: any;
-  projection: any;
+  filter: unknown;
+  projection: unknown;
 }
 
 export interface CountryModel extends Model<CountryDocument> {
